@@ -9,5 +9,11 @@ public class Bullet : MonoBehaviour
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 5f);
         Destroy(gameObject);
+
+        GameObject victim = collision.gameObject;
+        if (victim.CompareTag("Villager")) {
+            Destroy(victim);
+            Debug.Log("bad man...");
+        }
     }
 }
